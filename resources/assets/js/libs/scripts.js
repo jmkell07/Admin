@@ -5,7 +5,7 @@
 $(document).ready(function(){
 
     $('#selectAllBoxes').click(function(event){
-
+        
         if(this.checked) {
 
             $('.checkBoxes').each(function(){
