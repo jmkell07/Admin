@@ -19,7 +19,7 @@ class UserRequest extends Request
             'role_id'=>'required',
             'is_active'=>'required',
             'password'=>'required|min:5',
-            'profile_pic'=>'mimes:jpeg,jpg,png | max:2000'
+            'profile_pic'=>'mimes:jpeg,jpg,png,gif,JPEG,JPG,PNG,GIF | max:2000'
         ];
     }
 }

@@ -17,6 +17,7 @@
     <link href="{{asset('css/libs.css')}}" rel="stylesheet">
 
 
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -50,14 +51,15 @@
 
         <ul class="nav navbar-top-links navbar-right">
 
-
             <!-- /.dropdown -->
             <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" href="#" aria-expanded="false">
+                    <i class="fa fa-user fa-fw"></i> 
+                    {{ Auth::user()->name }}
+                    <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                    <li><a href="{{route('admin.users.edit', Auth::user()->id)}}"><i class="fa fa-user fa-fw"></i> User Profile</a>
                     </li>
                     <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                     </li>
@@ -69,6 +71,7 @@
             </li>
             <!-- /.dropdown -->
 
+            
 
         </ul>
 
@@ -116,11 +119,11 @@
                         <!-- /input-group -->
                     </li>
                     <li>
-                        <a href="/admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <a href="/admin"><i class="fa fa-home fa-fw"></i> Dashboard</a>
                     </li>
 
                     <li>
-                        <a href="#"><i class="fa fa-wrench fa-fw"></i>Users<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-users fa-fw"></i> Users<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="{{route('admin.users.index')}}">All Users</a>
@@ -135,14 +138,14 @@
                     </li>
 
                     <li>
-                        <a href="#"><i class="fa fa-wrench fa-fw"></i> Posts<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-comment fa-fw"></i> Posts<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="/posts">All Posts</a>
+                                <a href="{{route('admin.posts.index')}}">All Posts</a>
                             </li>
 
                             <li>
-                                <a href="/posts/create">Create Post</a>
+                                <a href="{{route('admin.posts.create')}}">Create Post</a>
                             </li>
 
                         </ul>
@@ -151,7 +154,7 @@
 
 
                     <li>
-                        <a href="#"><i class="fa fa-wrench fa-fw"></i>Categories<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-tags fa-fw"></i> Categories<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="/categories">All Categories</a>
@@ -167,7 +170,7 @@
 
 
                     <li>
-                        <a href="#"><i class="fa fa-wrench fa-fw"></i>Media<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-image fa-fw"></i> Media<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="/media">All Media</a>
@@ -332,7 +335,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header"></h1>
-
+                @include('includes.alerts')
                 @yield('content')
             </div>
             <!-- /.col-lg-12 -->

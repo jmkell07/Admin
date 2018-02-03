@@ -10,6 +10,7 @@ use App\Http\Requests\UserEditRequest;
 use App\User;
 use App\Role;
 use App\Photo;
+use Session;
 
 class AdminUsersController extends Controller
 {
@@ -35,7 +36,7 @@ class AdminUsersController extends Controller
         else{
              $input['photo_id'] = 1;
         }
-        $input['password'] = bcrypt($req->password);
+       // $input['password'] = bcrypt($req->password);
         User::create($input);
         return redirect('/admin/users');
     }
@@ -58,7 +59,7 @@ class AdminUsersController extends Controller
         }
         else{ 
             $input = $request->all();
-            $input['password'] = bcrypt($request->password); 
+          //  $input['password'] = bcrypt($request->password); 
         }
 
         $this->validate($request, [
@@ -67,7 +68,7 @@ class AdminUsersController extends Controller
             'role_id'=>'required',
             'is_active'=>'required',
             'password'=>'min:5',
-            'profile_pic'=>'mimes:jpeg,jpg,png | max:2000'
+            'profile_pic'=>'mimes:jpeg,jpg,png,JPEG,JPG,PNG,gif,GIF | max:2000'
         ]);
 
         if($file = $request->file('profile_pic')){
@@ -82,6 +83,11 @@ class AdminUsersController extends Controller
     }
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+        $name = $user->name;
+        unlink(public_path() . $user->photo->path);
+        $user->delete();
+        Session::flash('alert-success', $name . ' has been deleted.');
+        return redirect('/admin/users');
     }
 }
