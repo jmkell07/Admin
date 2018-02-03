@@ -16,7 +16,7 @@ class PostsCreateRequest extends Request
         return [
             'title'         =>'required|unique:posts|min:3',
             'body'          =>'required',
-            // 'category_id'   =>'required',
+            'category_id'   =>'required',
             'photo_id'      =>'required'
         ];
     }

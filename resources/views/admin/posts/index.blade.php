@@ -21,8 +21,8 @@
             <tr>
                 <td>{{$post->id}}</td>
                 <td>{{$post->user->name}}</td>
-                <td>{{$post->category_id}}</td>
-                <td>{{$post->photo_id}}</td>
+                <td>{{$post->category ? $post->category->name : 'Uncategorized'}}</td>
+                <td><img class="post-thumb" src="{{$post->photo ? $post->photo->path : '/images/placeholder.png'}}" alt=""></td>
                 <td>{{$post->title}}</a></td>
                 <td>{{$post->body}}</a></td>
                 <td>{{$post->created_at->diffForHumans()}}</td>
