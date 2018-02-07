@@ -1,9 +1,10 @@
 @extends('layouts.admin') 
 @section('content')
 <h1>Edit User</h1>
+
 <div class="row">
     <div class="col-md-3">
-        <img src="{{ $user->photo->path }}" alt="" class="img-responsive img-rounded">
+        <img src="{{ $user->photo ? $user->photo->path : '#' }}" alt="" class="img-responsive img-rounded">
     </div>
     <div class="col-md-9">
         {!! Form::model( $user, ['method'=>'PATCH', 'action'=>['AdminUsersController@update', $user->id], 'files'=>true]) !!}

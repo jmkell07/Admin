@@ -11,7 +11,6 @@
                 <th>Photo</th>
                 <th>Title</th>
                 <th>Body</th>
-                <th>ID</th>
                 <th>Created</th>
                 <th>Updated</th>
             </tr>
@@ -23,8 +22,8 @@
                 <td>{{$post->user->name}}</td>
                 <td>{{$post->category ? $post->category->name : 'Uncategorized'}}</td>
                 <td><img class="post-thumb" src="{{$post->photo ? $post->photo->path : '/images/placeholder.png'}}" alt=""></td>
-                <td>{{$post->title}}</a></td>
-                <td>{{$post->body}}</a></td>
+                <td><a href="{{route('admin.posts.edit', $post->id)}}">{{$post->title}}</a></td>
+                <td>{{str_limit($post->body,50)}}...</a></td>
                 <td>{{$post->created_at->diffForHumans()}}</td>
                 <td>{{$post->updated_at->diffForHumans()}}</td>
             </tr>
