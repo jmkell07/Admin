@@ -41,8 +41,9 @@ class AdminPostsController extends Controller
     }
 
     public function show($id)
-    {
-        //
+    {   
+      $post = Post::findOrFail($id);
+      return view('post', compact('post'));
     }
 
     public function edit($id)

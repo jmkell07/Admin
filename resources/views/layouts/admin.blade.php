@@ -110,54 +110,33 @@
                             </li>
 
                         </ul>
-                        <!-- /.nav-second-level -->
                     </li>
 
                     <li>
                         <a href="#"><i class="fa fa-comment fa-fw"></i> Posts<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li>
-                                <a href="{{route('admin.posts.index')}}">All Posts</a>
-                            </li>
-
-                            <li>
-                                <a href="{{route('admin.posts.create')}}">Create Post</a>
-                            </li>
+                            <li><a href="{{route('admin.posts.index')}}">All Posts</a></li>
+                            <li><a href="{{route('admin.posts.create')}}">Create Post</a></li>
+                            <li><a href="{{route('admin.comments.index')}}">All Comments</a></li>
 
                         </ul>
-                        <!-- /.nav-second-level -->
                     </li>
 
                     <li>
                         <a href="#"><i class="fa fa-tags fa-fw"></i> Categories<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li>
-                                <a href="{{route('admin.categories.index')}}">All Categories</a>
-                            </li>
-
-                            <li>
-                                <a href="{{route('admin.categories.create')}}">Create Category</a>
-                            </li>
-
+                            <li><a href="{{route('admin.categories.index')}}">All Categories</a></li>
+                            <li><a href="{{route('admin.categories.create')}}">Create Category</a></li>
                         </ul>
-                        <!-- /.nav-second-level -->
                     </li>
 
                     <li>
                         <a href="#"><i class="fa fa-image fa-fw"></i> Media<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
-                            <li>
-                                <a href="{{route('admin.media.index')}}">All Media</a>
-                            </li>
-
-                            <li>
-                                <a href="{{route('admin.media.create')}}">Upload Media</a>
-                            </li>
-
+                            <li><a href="{{route('admin.media.index')}}">All Media</a></li>
+                            <li><a href="{{route('admin.media.create')}}">Upload Media</a></li>
                         </ul>
-                        <!-- /.nav-second-level -->
                     </li>
-
 
                     <li>
                         <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
@@ -169,7 +148,6 @@
                                 <a href="morris.html">Morris.js Charts</a>
                             </li>
                         </ul>
-                        <!-- /.nav-second-level -->
                     </li>
                     <li>
                         <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
@@ -199,7 +177,6 @@
                                 <a href="grid.html">Grid</a>
                             </li>
                         </ul>
-                        <!-- /.nav-second-level -->
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
@@ -229,7 +206,6 @@
                                 <!-- /.nav-third-level -->
                             </li>
                         </ul>
-                        <!-- /.nav-second-level -->
                     </li>
                     <li class="active">
                         <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
@@ -241,7 +217,6 @@
                                 <a href="login.html">Login Page</a>
                             </li>
                         </ul>
-                        <!-- /.nav-second-level -->
                     </li>
                 </ul>
 
@@ -271,7 +246,6 @@
                         </li>
 
                     </ul>
-                    <!-- /.nav-second-level -->
                 </li>
 
             </ul>

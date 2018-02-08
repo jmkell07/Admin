@@ -24,8 +24,8 @@
                 <td><img class="post-thumb" src="{{$post->photo ? $post->photo->path : '/images/placeholder.png'}}" alt=""></td>
                 <td><a href="{{route('admin.posts.edit', $post->id)}}">{{$post->title}}</a></td>
                 <td>{{str_limit($post->body,50)}}...</a></td>
-                <td>{{$post->created_at->diffForHumans()}}</td>
-                <td>{{$post->updated_at->diffForHumans()}}</td>
+                <td>{{$post->created_at}}</td>
+                <td>{{$post->updated_at}}</td>
             </tr>
             @endforeach @endif
         </tbody>
