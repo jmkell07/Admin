@@ -13,4 +13,9 @@
 .post-thumb {
   width: 100px !important; }
 
+.dropzone {
+  border: 2px dashed #0087F7 !important;
+  border-radius: 5px !important;
+  background: #ececec !important; }
+
 /*# sourceMappingURL=app.css.map */
