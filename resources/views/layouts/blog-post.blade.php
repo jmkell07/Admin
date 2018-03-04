@@ -54,6 +54,8 @@
         <div class="row">
             <!-- Blog Post Content Column -->
             <div class="col-lg-8">
+                @include('includes.alerts')
+                @include('includes.errors')
                 @yield('content')
             </div>
             <!-- Blog Sidebar Widgets Column -->
@@ -103,5 +105,7 @@
     </div>
     <!-- /.container -->
 <script src="{{asset('js/libs.js')}}"></script>
+@yield('script')
+
 </body>
 </html>

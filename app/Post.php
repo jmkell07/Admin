@@ -4,9 +4,18 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
+// use Cviebrock\EloquentSluggable\SluggableInterface;
+// use Cviebrock\EloquentSluggable\SluggableTrait;
 
-class Post extends Model
+class Post extends Model 
 {
+    //implements SluggableInterface
+    // use SluggableTrait;
+    // protected $sluggable = [
+    //     'build_from'    => 'title', 
+    //     'save_to'       => 'slug',
+    //     'on_update'     => true
+    // ];
     protected $fillable = ['title','body','category_id','photo_id'];
     protected $dates = ['created_at','upadted_at'];
     public function user(){

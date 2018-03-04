@@ -18,4 +18,10 @@
   border-radius: 5px !important;
   background: #ececec !important; }
 
+.nested {
+  margin-left: 25px; }
+
+.reply-container form {
+  display: none; }
+
 /*# sourceMappingURL=app.css.map */
